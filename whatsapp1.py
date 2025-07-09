@@ -2,19 +2,17 @@ import streamlit as st
 import pywhatkit as kit
 from datetime import datetime
 
-# Page setup
+
 st.set_page_config(page_title="📲 WhatsApp Automation", layout="centered")
 st.title("📱 WhatsApp Message Sender")
 
-# Sidebar action selector
+
 st.sidebar.header("🛠️ Choose Action")
 action = st.sidebar.selectbox("Select Option", ["Send Instant Message", "Schedule Message"])
 
-# Common inputs
 phone = st.text_input("📞 Enter Phone Number (with country code)", value="+91", help="E.g., +91XXXXXXXXXX")
 message = st.text_area("💬 Enter Your Message")
 
-# Instant Message Section
 if action == "Send Instant Message":
     if st.button("📤 Send Now"):
         if phone and message:
@@ -26,7 +24,6 @@ if action == "Send Instant Message":
         else:
             st.warning("⚠️ Please enter both phone number and message.")
 
-# Scheduled Message Section
 elif action == "Schedule Message":
     st.markdown("🕒 **Schedule Time**")
     col1, col2 = st.columns(2)
