@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Web App</title>
+</head>
+<body>
+
+    <!-- Ask user's name and greet -->
+    <script>
+        let name = prompt("What is your name?");
+        alert("Hello, " + name + "!");
+    </script>
+
+    <!-- Paragraph tag to change text -->
+    <p id="message">Original content</p>
+
+    <!-- Input and button -->
+    <input type="text" id="userInput" placeholder="Type something...">
+    <button id="submitBtn">Submit</button>
+
+    <!-- Output area -->
+    <div id="output" style="margin-top: 15px; font-weight: bold;"></div>
+
+    <!-- JavaScript to manipulate content -->
+    <script>
+        // Change <p> tag content
+        document.getElementById("message").innerText = "JavaScript is Awesome!";
+
+        // Add event listener to button
+        const button = document.getElementById("submitBtn");
+        const input = document.getElementById("userInput");
+        const output = document.getElementById("output");
+
+        button.addEventListener("click", function() {
+            const userText = input.value;
+            output.innerText = "You wrote: " + userText;
+        });
+    </script>
+
+</body>
+</html>
