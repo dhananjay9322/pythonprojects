@@ -3,7 +3,7 @@ import streamlit as st
 
 st.title("Sending Emails with a click - Build with Python ")
 st.write("Enter Details Given Below....")
-From = "kkharatdhananjay@gmail.com"
+From = "youremail@gmail.com"
 Sub = st.text_input("Enter subject:")
 To = st.text_input("Enter receiver's email:")
 msg =  st.text_input("Enter message:")
@@ -14,7 +14,7 @@ if st.button("Send Email"):
 
   with smtplib.SMTP("smtp.gmail.com",587) as server:
     server.starttls()
-    server.login(From,password="mkvp qcvt warr jjbg")
+    server.login(From,password="yourapppassword")
     server.sendmail(from_addr=From,to_addrs=To, msg=text)
 
     print("Email sent successfully")
